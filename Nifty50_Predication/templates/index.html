@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nifty 50 Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input[type=text] {
+            margin: 8px;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        input[type=submit] {
+            background-color: #0078D7;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #005fa3;
+        }
+        h3 {
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nifty 50 Close Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Open:</label><br>
+        <input type="text" name="Open" required><br>
+
+        <label>High:</label><br>
+        <input type="text" name="High" required><br>
+
+        <label>Low:</label><br>
+        <input type="text" name="Low" required><br>
+
+        <label>Last:</label><br>
+        <input type="text" name="Last" required><br>
+
+        <label>Prev Close:</label><br>
+        <input type="text" name="Prev_Close" required><br>
+
+        <label>VWAP:</label><br>
+        <input type="text" name="VWAP" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
+
